@@ -1,26 +1,25 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper design-bg">
         <div class="account-body">
             <div class="form-container">
                 <form action="POST">
                     <div class="row">
                         <label for="username" @click="testFunc">아이디</label>
-                        <input type="text" id="username" v-model="username" placeholder=" username">
+                        <input type="text" id="username" class="design-bg design-point" v-model="username" placeholder="username">
                     </div>
                     <div class="row">
                         <label for="password">비밀번호</label>
-                        <input type="password" id="password" v-model="password">
+                        <input type="password" id="password" class="design-bg design-point" v-model="password">
                     </div>
                 </form>
-                <div class="alert" v-if="!isValid">
+                <div class="design-alert" v-if="!isValid">
                     유효하지 않은 이메일 혹은 비밀번호입니다.
                 </div>
-                <button class="btn" type="submit" @click="loginFunc">로그인</button>
-                <button class="btn" type="submit" @click="SignUpFunc">회원가입</button>
+                <button class="btn design-bg design-point" type="submit" @click="loginFunc">로그인</button>
+                <button class="btn design-bg design-point" type="submit" @click="SignUpFunc">회원가입</button>
             </div>
         </div>
     </div>
-    
 </template>
 
 <script>
@@ -65,6 +64,7 @@ export default {
                 
             })).catch((error) => {
                 console.log(error);
+                this.isValid = false;
             })
         },
         SignUpFunc() {
@@ -83,8 +83,6 @@ export default {
 
     width: 100%;
     height: 100%;
-
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .account-body {
@@ -98,11 +96,10 @@ export default {
 
     padding: 40px;
 
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-
     transform: translateX(-50%) translateY(-50%);
+
+    border: 1px solid white;
+    border-radius: 20px;
 }
 
 /* form */
@@ -120,51 +117,68 @@ export default {
     clear: both;
 }
 
-.row > label {
+label {
     float: left;
 
     font-size: 20px;
     line-height: 30px;
+    color: white;
 }
 
-.row > input {
+input {
     float: right;
-
+    box-sizing: border-box;
     width: 350px;
-    height: 30px;
+    height: 35px;
+    padding-left: 10px;
+
+    font-size: 15px;
 }
 
-.row > input::-webkit-input-placeholder{
+input::-webkit-input-placeholder{
     font-size: 15px;
+    color: white;
+}
+
+input:focus{
+    font-size: 15px;
+    color: white;
 }
 
 .btn { 
     display:block; 
     width:90%; 
-    height:60px; 
+    height:50px; 
 
     font-size: 25px;
     line-height:40px; 
-    border:1px #3399dd solid;
-    border-radius: 10px;
     margin:15px auto; 
-    background-color:#66aaff; 
     text-align:center; 
     cursor: pointer; 
-    color:#333; 
+    
     transition: all 0.9s color 0.3; 
 } 
 
-.btn:hover{
-    color:#fff;
-}
+/* design */
 
-
-input {
-    border-radius: 10px;
-}
-
-.alert {
+.design-alert {
     color: red;
 }
+
+.design-bg {
+    background-color: #15133C;
+}
+
+.design-point {
+    border: 1px solid #F1EEE9;
+    border-radius: 15px;
+
+    color: #F1EEE9;
+}
+
+.design-point:hover {
+    color: #73777B;
+    border-color: #73777B;
+}
+
 </style>
