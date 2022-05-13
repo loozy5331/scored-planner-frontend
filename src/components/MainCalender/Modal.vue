@@ -2,7 +2,7 @@
     <div class="modal">
         <div class="modal-body">
             <div class="row">
-                <input class="title" type="text" placeholder="제목을 입력해주세요" v-model="title" @input="title=$event.target.value; searchTitle()"> 
+                <input class="title-input" type="text" placeholder="제목을 입력해주세요" v-model="title" @input="title=$event.target.value; searchTitle()"> 
                 <div class="title-cands" v-if="title_cands.length > 0">
                     <div class="prev-titles">
                         <SearchTitle
@@ -23,9 +23,9 @@
                 <textarea class="memo" rows="10" v-model="memo" placeholder="메모"></textarea>
             </div>
             <div class="row">
-                <button class="btn" @click="$emit('closeModal')">닫기</button>
-                <button v-if="title" class="btn btn-delete" @click="deletePlan">삭제</button>
-                <button class="btn btn-close" @click="savePlan">저장</button>
+                <button class="submit-btn" @click="$emit('closeModal')">닫기</button>
+                <button v-if="title" class="submit-btn btn-delete" @click="deletePlan">삭제</button>
+                <button class="submit-btn" @click="savePlan">저장</button>
             </div>
             <div class="row">
                 <div class="prev-records">
@@ -218,16 +218,15 @@ export default {
     top: 50%;
     left: 50%;
     z-index: 100;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     width: 800px;
     height: 600px;
 
     padding: 40px;
 
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(115, 119, 123, 0.5);
     border-radius: 10px;
-    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
 
     transform: translateX(-50%) translateY(-50%);
 }
@@ -243,15 +242,20 @@ export default {
     clear: both;
 }
 
-.title {
+.title-input {
     width: 100%;
     height: 40px;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #F1EEE9;
     border-radius: 5px;
 
     font-size: 25px;
 }
+
+.title-input:-webkit-input-placeholder{
+    color: #73777B;
+}
+
 /* titles */
 .title-cands {
     position: relative;
@@ -264,20 +268,22 @@ export default {
     overflow-y: scroll;
     overflow-x: hidden;
 
-    background-color:white;
+    background-color:#F1EEE9;
     border: 1px solid black;
 }
 
 .score-label {
+    color: #F1EEE9;
     font-size: 20px;
     margin-right: 10px;
 }
 
 .score {
     height: 30px;
-    border: 1px solid #ccc;
+    border: 1px solid #F1EEE9;
     border-radius: 5px;
 
+    color: #73777B;
     font-size: 20px;
     text-align: center;
 }
@@ -286,21 +292,24 @@ export default {
     width: 100%;
     padding: 5px;
 
-    border: 1px solid #ccc;
+    border: 1px solid #73777B;
     border-radius: 5px;
 
     font-size: 25px;
 }
 
-.btn {
+.submit-btn {
     float: right;
     width: 60px;
     height: 30px;
     margin-right: 5px;
     
-    font-size: 20px;
-}
+    background-color: #F1EEE9;
+    border: 1px solid #15133C;
+    border-radius: 5px;
 
-/* prev-scores */
+    font-size: 20px;
+    font-weight: 500;
+}
 
 </style>
