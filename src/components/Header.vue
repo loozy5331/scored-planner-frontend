@@ -34,6 +34,7 @@ export default {
 
 <style scoped>
 .header {
+    position: relative;
     height: 40px;
     padding: 10px;
 

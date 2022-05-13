@@ -1,7 +1,7 @@
 <template>
-    <div class="wrapper design-bg">
-        <div class="account-body design-point">
-            <div class="form-container">
+    <div class="wrapper">
+        <div class="account-body design-bg">
+            <div class="form-container design-point">
                 <form action="POST">
                     <div class="row">
                         <label for="username">아이디</label>
