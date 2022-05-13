@@ -58,7 +58,7 @@ export default {
 }
 
 .date:hover {
-    background-color: #EC994B;
+    background-color: rgba(236, 153, 75, 0.5);
 }
 
 .date:hover > .top > .btn {
@@ -119,11 +119,10 @@ export default {
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: -1;
     display: block;
     width: 35px;
     height: 35px;
-    background-color: pink;
+    background-color: rgba(236, 153, 75, 0.5);
     transform: translate(-50%, -50%);
 
     border-bottom-right-radius: 50%;

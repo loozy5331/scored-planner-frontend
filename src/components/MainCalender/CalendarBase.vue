@@ -254,7 +254,7 @@ export default {
 }
 
 .month-nav > .curr-month {
-    border: 1px solid black;
+    border: 1px solid #F1EEE9;
     border-radius: 5px;
 }
 
@@ -300,7 +300,7 @@ export default {
     float: left;
     box-sizing: border-box;
     width: calc(100% / 7);
-    min-height: 150px;
+    min-height: 125px;
     color: #F1EEE9;
 
     border-top: 1px solid #F1EEE9;
