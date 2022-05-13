@@ -41,7 +41,9 @@ export default {
     float: left;
     width: 80%;
 
-    color: white;
+    color: #15133C;
+    font-weight: 500;
+    line-height: 20px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -49,14 +51,16 @@ export default {
 
 .score {
     float: right;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
 
-    border: 1px solid white;
+    border: 1px dashed #15133C;
     border-radius: 50%;
 
-    color: white;
+    color: #15133C;
     font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
     text-align: center;
 }
 </style>

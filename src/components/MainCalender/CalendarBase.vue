@@ -207,9 +207,6 @@ export default {
 
 <style scoped>
 /* base */
-/* .wrapper {
-    
-} */
 
 .calendar-container {
     float: left;

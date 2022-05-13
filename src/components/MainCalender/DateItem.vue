@@ -58,11 +58,13 @@ export default {
 }
 
 .date:hover {
-    background-color: #EDE6DB;
+    background-color: #EC994B;
 }
+
 .date:hover > .top > .btn {
-    color: #1D5C63;
-    border-color: #1D5C63;
+    color: #F1EEE9;
+    border-width: 2px;
+    border-color: #F1EEE9;
 }
 
 .top {
@@ -87,13 +89,13 @@ export default {
     float: right;
     width: 20px;
 
-    border: 1px solid white;
+    border: 1px solid #15133C;
     border-radius: 50%;
 
     text-align: center;
-    font-size: 20px;
+    font-size: 23px;
     line-height: 20px;
-    color: white;
+    color: #15133C;
 }
 
 .plans {

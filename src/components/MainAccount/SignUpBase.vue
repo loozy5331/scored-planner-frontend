@@ -27,7 +27,7 @@
                 <div class="design-alert" v-if="!isValid">
                     유효하지 않은 이메일 혹은 비밀번호입니다.
                 </div>
-                <button class="btn design-bg design-point design-hover" type="submit" @click="submitFunc">가입하기</button>
+                <button class="summit-btn design-bg design-point design-hover" type="submit" @click="submitFunc">가입하기</button>
             </div>  
         </div>
     </div>
