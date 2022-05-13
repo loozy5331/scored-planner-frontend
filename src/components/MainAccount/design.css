@@ -15,23 +15,23 @@
 }
 
 /* form */
-.row {
+.account-body > .form-container > form > .row {
     height: 40px;
     padding: 15px;
 }
 
-.row::after {
+.account-body > .form-container > form > .row::after {
     clear: both;
 }
 
-label {
+.account-body > .form-container > form > .row > label {
     float: left;
 
     font-size: 20px;
     line-height: 30px;
 }
 
-input {
+.account-body > .form-container > form > .row > input {
     float: right;
     box-sizing: border-box;
     width: 65%;
@@ -42,17 +42,17 @@ input {
     font-size: 15px;
 }
 
-input::-webkit-input-placeholder{
+.account-body > .form-container > form > .row > input::-webkit-input-placeholder{
     font-size: 15px;
     color: white;
 }
 
-input:focus{
+.account-body > .form-container > form > .row > input:focus{
     font-size: 15px;
     color: white;
 }
 
-.summit-btn { 
+.account-body > .form-container > .summit-btn { 
     display:block; 
     width:90%; 
     height:50px; 

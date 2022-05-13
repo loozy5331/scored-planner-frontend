@@ -74,7 +74,5 @@ export default {
 }
 </script>
 
-
-<style scope>
-@import './design.css';
+<style src="./design.css" scope>
 </style>
