@@ -1,24 +1,17 @@
 .wrapper {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    float: left;
+    width: 100%;
 }
 
 .account-body {
-    float: left;
-    position: relative;
-    width: 100%;
-    min-height: 100%;
+    display: block;
+    padding: 10% 21% 10% 30%;
 }
 
 .form-container {
-    max-width: 500px;
-
-    /* margin: 15% 25%; */
-    margin: 10% 20%;
-    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
 }
 
 /* form */

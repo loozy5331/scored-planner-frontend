@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <div class="account-body design-bg">
+        <div class="account-body">
             <div class="form-container design-point">
                 <form action="POST">
                     <div class="row">

@@ -38,13 +38,16 @@ export default {
     height: 40px;
     padding: 10px;
 
-    background-color:gray;
+    background-color:#15133C;
+    border-bottom: 1px solid #F1EEE9;
 }
 
 .logo {
     float: left;
     margin-left: 20px;
     font-size: 30px;
+
+    color: #F1EEE9;
 }
 
 .utils {
@@ -54,11 +57,11 @@ export default {
 .utils > * {
     margin-right: 10px;
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid #F1EEE9;
     border-radius: 5px;
     
     font-size: 20px;
-    background-color: white;
+    color: #F1EEE9;
 }
 .home {
     float: left;

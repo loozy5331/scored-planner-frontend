@@ -83,8 +83,4 @@ export default {
 
 <style scope>
 @import './design.css';
-
-/* .account-body {
-    height: 400px !important;
-} */
 </style>

@@ -1,40 +1,42 @@
 <template>
     <div class="wrapper">
-        <!-- header -->
-        <div class="calendar-header"> 
-            <div class="year-month" @click="testFunc">{{ yearMonth }} 점수판</div>
-            <div class="month-nav">
-                <div class="prev-month" @click="prevMonth">이전 달</div>
-                <div class="curr-month" @click="goToday">지금</div>
-                <div class="next-month" @click="nextMonth">다음 달</div>
-            </div>
-        </div>
-        <!-- /header -->
-        <!-- main -->
-        <div class="main">
-            <div class="calendar">
-                <div class="week">
-                    <div class="day" 
-                        v-for="(day, i) in days" 
-                        :key="i">{{ day }}</div>
+        <div class="calendar-container">
+            <!-- header -->
+            <div class="calendar-header"> 
+                <div class="year-month" @click="testFunc">{{ yearMonth }} 점수판</div>
+                <div class="month-nav">
+                    <div class="prev-month" @click="prevMonth">이전 달</div>
+                    <div class="curr-month" @click="goToday">지금</div>
+                    <div class="next-month" @click="nextMonth">다음 달</div>
                 </div>
             </div>
-            <div class="dates">
-                <DateItem
-                    v-for="(dObj, i) in dateObjects" 
-                    :key="i + yearMonth"
-                    :dateObj="dObj"
-                    :plans="$store.state.plans[dObj.value]"
-                    @openModal="showModal = true">
-                </DateItem>
+            <!-- /header -->
+            <!-- main -->
+            <div class="main">
+                <div class="calendar">
+                    <div class="week">
+                        <div class="day" 
+                            v-for="(day, i) in days" 
+                            :key="i">{{ day }}</div>
+                    </div>
+                </div>
+                <div class="dates">
+                    <DateItem
+                        v-for="(dObj, i) in dateObjects" 
+                        :key="i + yearMonth"
+                        :dateObj="dObj"
+                        :plans="$store.state.plans[dObj.value]"
+                        @openModal="showModal = true">
+                    </DateItem>
+                </div>
             </div>
+            <!-- /main -->
+            <Modal 
+                v-if="showModal" 
+                @closeModal="showModal = false" 
+                @initPlans="initPlans()"
+                :modalPlan="$store.state.modalPlan"/>
         </div>
-        <!-- /main -->
-        <Modal 
-            v-if="showModal" 
-            @closeModal="showModal = false" 
-            @initPlans="initPlans()"
-            :modalPlan="$store.state.modalPlan"/>
     </div>
 </template>
 
@@ -205,9 +207,16 @@ export default {
 
 <style scoped>
 /* base */
-.wrapper {
-    min-width: 900px;
-    margin: 20px;
+/* .wrapper {
+    
+} */
+
+.calendar-container {
+    float: left;
+    position: relative;
+    width: 100%;
+
+    background-color: #15133C;
 }
 .main {
     padding: 0 50px 50px 50px;
@@ -217,6 +226,8 @@ export default {
 .calendar-header {
     height: 50px;
     padding: 20px 20px 0 20px;
+
+    color: #F1EEE9;
 }
 
 .calendar-header::after {
@@ -268,6 +279,7 @@ export default {
     width: calc(100%/7);
     height: 20px;
     text-align:center;
+    color: #F1EEE9;
 }
 
 .day:nth-child(7n + 1) {
@@ -283,8 +295,8 @@ export default {
     display: inline-block;
     width:100%;
 
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
+    border-left: 1px solid #F1EEE9;
+    border-bottom: 1px solid #F1EEE9;
 }
 
 .dates > .date {
@@ -292,9 +304,10 @@ export default {
     box-sizing: border-box;
     width: calc(100% / 7);
     min-height: 150px;
+    color: #F1EEE9;
 
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 1px solid #F1EEE9;
+    border-right: 1px solid #F1EEE9;
 }
 
 </style>
