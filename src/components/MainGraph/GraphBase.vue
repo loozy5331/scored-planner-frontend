@@ -2,27 +2,23 @@
     <div class="chart-body">
         <div class="row">
             <div class="col">
-                <GraphPerMonth/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <GraphTopWord/>
+                <GraphScore :pivot="'month'"/>
             </div>
             <div class="col">
-                <GraphBottomWord/>
+                <GraphScore :pivot="'day'"/>
+            </div>
+            <div class="col">
+                <GraphScore :pivot="'week'"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import GraphPerMonth from './GraphPerMonth.vue'
-import GraphTopWord from './GraphTopWord.vue'
-import GraphBottomWord from './GraphBottomWord.vue'
+import GraphScore from './GraphScore.vue'
 
 export default {
-    components: {GraphPerMonth, GraphTopWord, GraphBottomWord},
+    components: { GraphScore }
 }
 
 </script>

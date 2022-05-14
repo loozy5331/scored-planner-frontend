@@ -43,7 +43,7 @@ export default {
       }
     },
     setDefaultValue(rawData) {
-      const chartData = JSON.parse(rawData);
+      const chartData = rawData;
       const labels = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
       const backgroundColors = []
       const data = []
@@ -73,10 +73,13 @@ export default {
   async mounted() {
       this.loaded = false;
 
-      await this.axios.get(`/api/graph/score-per-month`)
+      await this.axios.get(`/api/graph/${this.$store.state.username}`)
       .then((res) => {
+          console.log(res);
           this.chartData = this.setDefaultValue(res.data);
           this.loaded = true;
+      }).catch((e) => {
+        console.log(e);
       });
   }
 
