@@ -1,9 +1,11 @@
 <template>
     <div class="header clear">
-        <div class="logo">LOGO</div>
+        <div class="logo">Scored Planner</div>
         <div class="utils clear">
             <div class="home" @click="goCalendar">처음으로</div>
-            <div class="graph" @click="goGraph">점수 그래프</div>
+            <div class="graph" 
+                v-if="$store.state.username"
+                @click="goGraph">점수 그래프</div>
             <div class="logout" 
                 v-if="$store.state.username"
                 @click="logout">로그아웃</div>

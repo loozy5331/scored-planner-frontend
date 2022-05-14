@@ -4,12 +4,12 @@
             <div class="col">
                 <GraphScore :pivot="'month'"/>
             </div>
-            <!-- <div class="col">
+            <div class="col">
                 <GraphScore :pivot="'day'"/>
             </div>
             <div class="col">
                 <GraphScore :pivot="'week'"/>
-            </div> -->
+            </div>
             <div class="col">
                 <GraphPlan :pivot="'ASC'"/>
             </div>
@@ -35,6 +35,9 @@ export default {
 
 <style scoped>
 .chart-body {
+    position:absolute;
+    height: 100%;
+    overflow-y: scroll;
     padding: 50px;
 }
 .row {

@@ -118,3 +118,9 @@ export default {
 
 }
 </script>
+
+<style scope>
+canvas {
+    max-height: 300px;
+}
+</style>
