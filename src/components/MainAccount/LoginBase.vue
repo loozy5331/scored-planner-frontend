@@ -47,7 +47,7 @@ export default {
             sessionStorage.setItem("jwtToken", jwtToken);
 
             this.axios.defaults.headers.common['Authorization'] = `Barear ${jwtToken}`
-            this.axios.post(`/api/search/${this.username}}`)
+            this.axios.post(`/api/search/${this.username}`)
         },
         loginFunc (){
             const frm = new FormData() 
