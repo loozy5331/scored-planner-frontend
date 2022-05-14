@@ -4,11 +4,20 @@
             <div class="col">
                 <GraphScore :pivot="'month'"/>
             </div>
-            <div class="col">
+            <!-- <div class="col">
                 <GraphScore :pivot="'day'"/>
             </div>
             <div class="col">
                 <GraphScore :pivot="'week'"/>
+            </div> -->
+            <div class="col">
+                <GraphPlan :pivot="'ASC'"/>
+            </div>
+            <div class="col">
+                <GraphPlan :pivot="'DESC'"/>
+            </div>
+            <div class="col">
+                <GraphPlan :pivot="'freq'"/>
             </div>
         </div>
     </div>
@@ -16,9 +25,10 @@
 
 <script>
 import GraphScore from './GraphScore.vue'
+import GraphPlan from './GraphPlan.vue'
 
 export default {
-    components: { GraphScore }
+    components: { GraphScore, GraphPlan }
 }
 
 </script>
