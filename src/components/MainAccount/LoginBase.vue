@@ -5,11 +5,18 @@
                 <form action="POST">
                     <div class="row">
                         <label for="username" @click="testFunc">아이디</label>
-                        <input type="text" id="username" class="design-bg design-point design-hover" v-model="username" placeholder="username">
+                        <input type="text" 
+                                id="username" 
+                                class="design-bg design-point design-hover" 
+                                v-model="username" 
+                                placeholder="username">
                     </div>
                     <div class="row">
                         <label for="password">비밀번호</label>
-                        <input type="password" id="password" class="design-bg design-point design-hover" v-model="password">
+                        <input type="password" 
+                                id="password" 
+                                class="design-bg design-point design-hover" 
+                                v-model="password">
                     </div>
                 </form>
                 <div class="design-alert" v-if="!isValid">
@@ -17,6 +24,7 @@
                 </div>
                 <button class="summit-btn design-bg design-point design-hover" type="submit" @click="loginFunc">로그인</button>
                 <button class="summit-btn design-bg design-point design-hover" type="submit" @click="SignUpFunc">회원가입</button>
+                <button class="summit-btn design-bg design-point design-hover" type="submit" @click="guestLogin">게스트 로그인</button>
             </div>
         </div>
     </div>
@@ -69,6 +77,14 @@ export default {
         },
         SignUpFunc() {
             this.$router.push("/signUp");
+        },
+        guestLogin(){
+            // 테스트를 위한 게스트 로그인
+            // overwrite
+            this.username = "guest"
+            this.password = "guest"
+
+            this.loginFunc()
         }
     }
 }
