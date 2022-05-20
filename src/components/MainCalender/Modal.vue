@@ -79,7 +79,8 @@ export default {
                 1. store에 저장된 계획 초기화
                 2. Modal 닫기
             */
-            this.axios.delete(`/api/plan/${this.id}`)
+            const username = this.state.username;
+            this.axios.delete(`/api/plan/${username}/${this.id}`)
             .then((res => {
                 console.log(res);
                 this.$emit("initPlans");
@@ -139,7 +140,8 @@ export default {
             frm.append('memo', this.memo || "메모 없음")
             frm.append('date', this.date)
 
-            this.axios.put(`/api/plan/${this.id}`, frm)
+            const username = this.state.username;
+            this.axios.put(`/api/plan/${username}/${this.id}`, frm)
             .then((res => {
                 console.log(res);
                 this.$emit("initPlans");
