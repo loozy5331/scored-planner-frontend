@@ -12,8 +12,7 @@ app.config.globalProperties.cookies = Cookies;
 
 // set axios
 const axios_ = axios.create({
-    // baseURL: 'http://localhost:8000',
-    baseURL: 'http://ec2-52-78-162-84.ap-northeast-2.compute.amazonaws.com:8000',
+    baseURL: 'http://localhost:8000',
     headers: {
         'xsrfCookieName': 'csrftoken',
         'xsrfHeaderName': 'X-CSRFTOKEN',
